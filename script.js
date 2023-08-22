@@ -1,37 +1,32 @@
 
 //function to organise the game and keep the score
+let playerScore =0;
+let computerScore =0;
 function playRound(playerSelect, computerSelect)
 {   
-        let playerScore =0;
+        
         
         playerSelect=prompt("Choose your weapon sir!!");
         playerSelect =playerSelect.toUpperCase();
         computerSelect=getcomputerChoice();
-        if(playerSelect=="ROCK"&&computerSelect=="SCISSOR")
+        if(playerSelect=="ROCK"&&computerSelect=="SCISSOR" || playerSelect=="SCISSOR"&&computerSelect=="PAPER" || playerSelect=="PAPER"&&computerSelect=="ROCK")
         {
-        return console.log("You win!! Rock beats Scissor")
-        }else if(playerSelect=="SCISSOR"&&computerSelect=="PAPER")
-        {
-        return console.log("You win!! Scissor beats Paper")
-        }else if(playerSelect=="PAPER"&&computerSelect=="ROCK")
-        {
-        return console.log("You win!! Paper beats Rock")
+        console.log("You win!! " +playerSelect+ " beats " +computerSelect);
+        playerScore++
+        return console.log("Player score at the moment is " +playerScore);
         }
-
-        if(computerSelect=="ROCK" &&playerSelect=="SCISSOR")
+        else if(computerSelect=="ROCK" &&playerSelect=="SCISSOR" || computerSelect=="PAPER" && playerSelect=="ROCK" || computerSelect=="SCISSOR" &&playerSelect=="PAPER" )
         {
-        return console.log("You lose!! rock beats scissor")    
-        }else if(computerSelect=="PAPER" && playerSelect=="ROCK")
-        {
-            return console.log("You lose!! paper beats Rock")
-        }else if(computerSelect=="SCISSOR" &&playerSelect=="PAPER")
-        {
-            return console.log("You lose!! scissor beats paper")
+        console.log("You lose!! " +computerSelect+ " beats " +playerSelect)
+        computerScore++
+        return console.log("Computer score at the moment is " +computerScore);    
         }
-        if(playerSelect==computerSelect)
+        else if(playerSelect==computerSelect)
         {
-            return console.log("It's a draw man!!")
+        console.log("It's a draw man!!")
+        return console.log("player score at the moment is "+playerScore+ " computer score at the moment is " +computerScore)
         }
+    
 }
 
 // function to get computers choice
@@ -51,6 +46,13 @@ function game()
     {
         playRound();
     }
+    if(playerScore>computerScore)
+        {
+            return console.log("you win")
+        }
+        else{
+            return console.log("you lose")
+        }
 }
 game();
 
