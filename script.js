@@ -1,5 +1,5 @@
 
-//function to organise the game and keep the score
+//function to organise the game and give score for the round
 let playerScore =0;
 let computerScore =0;
 function playRound(playerSelect, computerSelect)
@@ -38,7 +38,7 @@ function getcomputerChoice()
 
 }
     
-//function to play rounds
+//function to play rounds and give final score
 function game()
 {
     let count = prompt("How many rounds do you wanna play??")
@@ -48,9 +48,11 @@ function game()
     }
     if(playerScore>computerScore)
         {
-            return console.log("you win")
+            console.log("Final scores: Player Score : " +playerScore+ " Computer Score : " +computerScore);
+            return console.log("you win");
         }
         else{
+            console.log("Final scores: Player Score : " +playerScore+ " Computer Score : " +computerScore);
             return console.log("you lose")
         }
 }
