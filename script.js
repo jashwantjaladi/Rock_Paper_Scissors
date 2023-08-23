@@ -56,5 +56,10 @@ function game()
             return console.log("you lose")
         }
 }
-game();
+//-------------------------------------
+
+//Event listener for player choice
+
+
+
 
