@@ -2,29 +2,33 @@
 //function to organise the game and give score for the round
 let playerScore =0;
 let computerScore =0;
+let playerSelect;
+let computerSelect;
+
+
 function playRound(playerSelect, computerSelect)
 {   
         
         
-        playerSelect=prompt("Choose your weapon sir!!");
-        playerSelect =playerSelect.toUpperCase();
+        //playerSelect=prompt("Choose your weapon sir!!");
+        //playerSelect =playerSelect.toUpperCase();
         computerSelect=getcomputerChoice();
         if(playerSelect=="ROCK"&&computerSelect=="SCISSOR" || playerSelect=="SCISSOR"&&computerSelect=="PAPER" || playerSelect=="PAPER"&&computerSelect=="ROCK")
         {
-        console.log("You win!! " +playerSelect+ " beats " +computerSelect);
+        textOne.textContent="You win!! " +playerSelect+ " beats " +computerSelect;
         playerScore++
-        return console.log("Player score at the moment is " +playerScore);
+        textTwo.textContent="Player score at the moment is " +playerScore;
         }
         else if(computerSelect=="ROCK" &&playerSelect=="SCISSOR" || computerSelect=="PAPER" && playerSelect=="ROCK" || computerSelect=="SCISSOR" &&playerSelect=="PAPER" )
         {
-        console.log("You lose!! " +computerSelect+ " beats " +playerSelect)
+        textOne.textContent="You lose!! " +computerSelect+ " beats " +playerSelect;
         computerScore++
-        return console.log("Computer score at the moment is " +computerScore);    
+        textTwo.textContent="Computer score at the moment is " +computerScore;    
         }
         else if(playerSelect==computerSelect)
         {
-        console.log("It's a draw man!!")
-        return console.log("player score at the moment is "+playerScore+ " computer score at the moment is " +computerScore)
+        textOne.textContent="It's a draw man!!";
+        textTwo.textContent="player score at the moment is "+playerScore+ " computer score at the moment is " +computerScore
         }
     
 }
@@ -37,29 +41,60 @@ function getcomputerChoice()
     return choice.toUpperCase();
 
 }
+
     
 //function to play rounds and give final score
 function game()
 {
-    let count = prompt("How many rounds do you wanna play??")
-    for (let i=1;i<=count;i++)
-    {
-        playRound();
-    }
-    if(playerScore>computerScore)
+    if(playerScore==5 &&computerScore<5)
         {
-            console.log("Final scores: Player Score : " +playerScore+ " Computer Score : " +computerScore);
-            return console.log("you win");
+            endResult.textContent="Final scores: Player Score : " +playerScore+ " Computer Score : " +computerScore;
+            finalOutcome.textContent="You win! reload to play again!!";
+            
+        
         }
-        else{
-            console.log("Final scores: Player Score : " +playerScore+ " Computer Score : " +computerScore);
-            return console.log("you lose")
+        else if (playerScore<5 &&computerScore==5){
+            endResult.textContent="Final scores: Player Score : " +playerScore+ " Computer Score : " +computerScore;
+            finalOutcome.textContent="You lose! reload to play again!!";
+            
+        
         }
 }
 //-------------------------------------
-
 //Event listener for player choice
+const btn1 = document.querySelector(".btn1")
+const btn2 = document.querySelector(".btn2")
+const btn3 = document.querySelector(".btn3")
+const textOne = document.querySelector(".textOne");
+const textTwo = document.querySelector(".textTwo");
+const endResult = document.querySelector(".endResult")
+const finalOutcome = document.querySelector(".finalOutcome")
 
 
 
+btn1.addEventListener("click",function(e)
+{
+    
+     playerSelect="ROCK";
+     computerSelect=getcomputerChoice();
+    playRound(playerSelect, computerSelect);
+     game(); 
+    
+    
+})
+btn2.addEventListener("click",function(e)
+{
+     playerSelect="PAPER";
+     computerSelect=getcomputerChoice();
+    playRound(playerSelect, computerSelect);
+    game(); 
+})
+btn3.addEventListener("click",function(e)
+{
+     playerSelect="SCISSOR";
+     computerSelect=getcomputerChoice();
+    playRound(playerSelect, computerSelect);
+    game();
+    
+})
 
