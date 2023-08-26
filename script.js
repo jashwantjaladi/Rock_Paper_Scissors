@@ -1,11 +1,16 @@
-
-//function to organise the game and give score for the round
+const btn1 = document.querySelector(".btn1")
+const btn2 = document.querySelector(".btn2")
+const btn3 = document.querySelector(".btn3")
+const textOne = document.querySelector(".textOne");
+const textTwo = document.querySelector(".textTwo");
+const endResult = document.querySelector(".endResult")
+const finalOutcome = document.querySelector(".finalOutcome")
 let playerScore =0;
 let computerScore =0;
 let playerSelect;
 let computerSelect;
 
-
+//function to organise the game and give score for the round
 function playRound(playerSelect, computerSelect)
 {   
         
@@ -68,16 +73,6 @@ function game()
 }
 //-------------------------------------
 //Event listener for player choice
-const btn1 = document.querySelector(".btn1")
-const btn2 = document.querySelector(".btn2")
-const btn3 = document.querySelector(".btn3")
-const textOne = document.querySelector(".textOne");
-const textTwo = document.querySelector(".textTwo");
-const endResult = document.querySelector(".endResult")
-const finalOutcome = document.querySelector(".finalOutcome")
-
-
-
 btn1.addEventListener("click",function(e)
 {
     
