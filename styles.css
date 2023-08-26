@@ -3,6 +3,7 @@
 background-color: #667e2c;
 color: antiquewhite;
 font-family: monospace;
+
 }
 h1{
     text-align: center;
@@ -53,8 +54,7 @@ img{
 .textOne, .textTwo
 {
     width: 1000px;
-    border: 1px solid gold;
-    border-radius: 5px;
+    
     
 }
 
@@ -65,8 +65,7 @@ img{
 .endResult, .finalOutcome
 {
     width: 1000px;
-    border: 1px solid gold;
-    border-radius: 5px; 
+   
 }
 
 .endResult

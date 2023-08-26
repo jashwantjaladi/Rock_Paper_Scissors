@@ -50,12 +50,18 @@ function game()
         {
             endResult.textContent="Final scores: Player Score : " +playerScore+ " Computer Score : " +computerScore;
             finalOutcome.textContent="You win! reload to play again!!";
+            btn1.setAttribute("disabled", "disabled");
+            btn2.setAttribute("disabled", "disabled");
+            btn3.setAttribute("disabled", "disabled");
             
         
         }
         else if (playerScore<5 &&computerScore==5){
             endResult.textContent="Final scores: Player Score : " +playerScore+ " Computer Score : " +computerScore;
             finalOutcome.textContent="You lose! reload to play again!!";
+            btn1.setAttribute("disabled", "disabled");
+            btn2.setAttribute("disabled", "disabled");
+            btn3.setAttribute("disabled", "disabled");
             
         
         }
